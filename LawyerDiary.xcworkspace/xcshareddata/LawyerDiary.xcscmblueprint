@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "1FECB4BBEB2EBDA2EA286B972A59450F3D0D6D21",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "1FECB4BBEB2EBDA2EA286B972A59450F3D0D6D21" : 9223372036854775807,
+    "1E69235D79110811F1B60CF19527D724530ECD64" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "A8C62FA4-54E5-4093-AE91-F39E9D51B863",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "1FECB4BBEB2EBDA2EA286B972A59450F3D0D6D21" : "lawyerios\/",
+    "1E69235D79110811F1B60CF19527D724530ECD64" : "LawyerDiary"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "LawyerDiary",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "LawyerDiary.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Singulars\/LawyerDiary.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1E69235D79110811F1B60CF19527D724530ECD64"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/vermamukesh67\/lawyerios.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1FECB4BBEB2EBDA2EA286B972A59450F3D0D6D21"
+    }
+  ]
+}
