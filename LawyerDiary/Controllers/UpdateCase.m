@@ -641,69 +641,43 @@ SubordinateAdmin *selectedAdminObj;
                 NSMutableDictionary *caseParams = [[NSMutableDictionary alloc] init];
                 caseParams[kAPIuserId] = USER_ID;
                 caseParams[kAPIcaseNo] = existingCaseObj.caseNo;
-                caseParams[kAPIlastHeardDate] = existingCaseObj.nextHearingDate;
+                caseParams[kAPIlastHeardDate] = [Global getDateStringOfFormat:ServerBirthdateFormat fromDateString:tfNHearingDate.text ofFormat:DefaultBirthdateFormat];
                 caseParams[kAPInextHearingDate] = [Global getDateStringOfFormat:ServerBirthdateFormat fromDateString:tfNHearingDate.text ofFormat:DefaultBirthdateFormat];
                 caseParams[kAPIcaseStatus] = tfCaseStatus.text;
-                caseParams[kAPIlocalClientId] = existingCaseObj.localClientId;
-                caseParams[kAPIclientId] = existingCaseObj.clientId;
-                caseParams[kAPIclientFirstName] = existingCaseObj.clientFirstName;
-                caseParams[kAPIclientLastName] = existingCaseObj.clientLastName;
-                caseParams[kAPImobile] = existingCaseObj.mobile;
+                caseParams[kAPIlocalClientId] = existingClientObj.localClientId,
+                caseParams[kAPIclientId] = existingClientObj.clientId;
+                caseParams[kAPIclientFirstName] = existingClientObj.clientFirstName;
+                caseParams[kAPIclientLastName] = existingClientObj.clientLastName;
+                caseParams[kAPImobile] = existingClientObj.mobile;
                 caseParams[kAPIoppositionFirstName] = existingCaseObj.oppositionFirstName;
                 caseParams[kAPIoppositionLastName] = existingCaseObj.oppositionLastName;
                 caseParams[kAPIoppositionLawyerName] = existingCaseObj.oppositionLawyerName;
-                caseParams[kAPIlocalCourtId] = existingCourtObj.localCourtId;
+                
                 caseParams[kAPIcourtId] = existingCourtObj.courtId;
                 caseParams[kAPIcourtName] = existingCourtObj.courtName;
                 caseParams[kAPImegistrateName] = existingCourtObj.megistrateName;
                 caseParams[kAPIcourtCity] = existingCourtObj.courtCity;
-                caseParams[kIsSynced] = @0;
+                [caseParams setObject:isForSubordinate ? existingAdminObj.adminId : @0 forKey:kAPIadminId];
+                [caseParams setObject:@"" forKey:kAPIaddress];
+                [caseParams setObject:@"" forKey:kAPIemail];
+                [caseParams setObject:ksaveCase forKey:kAPIMode];
                 
                 if (existingCaseObj) {
                     if ([existingCaseObj.isSynced isEqualToNumber:@1]) {
                         caseParams[kAPIcaseId] = existingCaseObj.caseId;
+                        caseParams[kAPIlocalCourtId] = existingCourtObj.courtId;
+                        caseParams[kAPIlocalClientId] = existingCaseObj.localClientId,
+                        caseParams[kAPIclientId] = existingCaseObj.clientId;
+                        caseParams[kAPIclientFirstName] = existingCaseObj.clientFirstName;
+                        caseParams[kAPIclientLastName] = existingCaseObj.clientLastName;
+                        caseParams[kAPImobile] = existingClientObj.mobile;
                     }
                     
-                    caseParams[kAPIlocalCaseId] = existingCaseObj.localCaseId;
                 }
-                Cases *tempCaseObj = [Cases saveCase:caseParams forSubordiante:isForSubordinate withAdminDetail:isForSubordinate ? @{
-                                                                                                                                     kAPIadminId: existingAdminObj.adminId,
-                                                                                                                                     kAPIadminName: existingAdminObj.adminName,
-                                                                                                                                     kAPIhasAccess: existingAdminObj.hasAccess
-                                                                                                                                     } : nil];
-                
-                NSDictionary *params = @{
-                                         kAPIMode: ksaveCase,
-                                         kAPIuserId: USER_ID,
-                                         kAPIlocalCaseId: tempCaseObj.localCaseId,
-                                         kAPIcaseId: (existingCaseObj && ![existingCaseObj.caseId isEqualToNumber:@0]) ? existingCaseObj.caseId : @"",
-                                         kAPIcaseNo: tempCaseObj.caseNo,
-                                         kAPIlastHeardDate: tempCaseObj.lastHeardDate,
-                                         kAPInextHearingDate: tempCaseObj.nextHearingDate,
-                                         kAPIcaseStatus: tempCaseObj.caseStatus,
-                                         kAPIlocalClientId: tempCaseObj.localClientId,
-                                         kAPIclientId: tempCaseObj.clientId,
-                                         kAPIclientFirstName: tempCaseObj.clientFirstName,
-                                         kAPIclientLastName: tempCaseObj.clientLastName,
-                                         kAPImobile: tempCaseObj.mobile,
-                                         kAPIemail: @"",
-                                         kAPIaddress: @"",
-                                         kAPIoppositionFirstName: tempCaseObj.oppositionFirstName,
-                                         kAPIoppositionLastName: tempCaseObj.oppositionLastName,
-                                         kAPIoppositionLawyerName: tempCaseObj.oppositionLawyerName,
-                                         kAPIlocalCourtId: tempCaseObj.localCourtId,
-                                         kAPIcourtId: tempCaseObj.courtId,
-                                         kAPIcourtName: tempCaseObj.courtName,
-                                         kAPImegistrateName: tempCaseObj.megistrateName,
-                                         kAPIcourtCity: tempCaseObj.courtCity,
-                                         kAPIadminId: isForSubordinate ? existingAdminObj.adminId : @0
-                                         };
-                
-                NSLog(@"%@", params);
                 
                 [self setBarButton:IndicatorBarButton];
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                    [NetworkManager startPostOperationWithParams:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                    [NetworkManager startPostOperationWithParams:caseParams success:^(AFHTTPRequestOperation *operation, id responseObject) {
                         
                         [self setBarButton:SaveBarButton];
                         
@@ -713,12 +687,20 @@ SubordinateAdmin *selectedAdminObj;
                         else {
                             if ([responseObject[kAPIstatus] isEqualToString:@"0"]) {
                                 [Global showNotificationWithTitle:[responseObject valueForKey:kAPImessage] titleColor:WHITE_COLOR backgroundColor:APP_RED_COLOR forDuration:1];
-                                //                        UI_ALERT(@"ERROR", [responseObject valueForKey:kAPImessage], nil);
                             }
                             else {
-                                [Cases updateCase:responseObject forUser:USER_ID];
+                                caseParams[kAPIcaseId] = [responseObject objectForKey:kAPIcaseId];
+                                caseParams[kAPIcourtId] = [responseObject objectForKey:kAPIcourtId];
                                 
-                                [self scheduleNotification];
+                                
+                                [Cases saveCase:caseParams forSubordiante:isForSubordinate withAdminDetail:isForSubordinate ? @{
+                                                                                                                                kAPIadminId: existingAdminObj.adminId,
+                                                                                                                                kAPIadminName: existingAdminObj.adminName,
+                                                                                                                                kAPIhasAccess: existingAdminObj.hasAccess
+                                                                                                                                } : nil];
+                                
+                                
+                                
                                 
                                 POST_NOTIFICATION(isForSubordinate ? kFetchSubordinateCases : kFetchCases, nil);
                                 
@@ -760,22 +742,7 @@ SubordinateAdmin *selectedAdminObj;
         else {
             
             [Global showNotificationWithTitle:kCHECK_INTERNET titleColor:WHITE_COLOR backgroundColor:APP_RED_COLOR forDuration:1];
-            
-            //        [Global showNotificationWithTitle:kCHECK_INTERNET titleColor:WHITE_COLOR backgroundColor:APP_RED_COLOR forDuration:1];
-            
-//            POST_NOTIFICATION(isForSubordinate ? kFetchSubordinateCases : kFetchCases, nil);
-//            
-//            [self scheduleNotification];
-//            
-//            if (existingCaseObj) {
-//                [self.navigationController popViewControllerAnimated:YES];
-//                [Global showNotificationWithTitle:@"Case saved successfully!" titleColor:WHITE_COLOR backgroundColor:APP_GREEN_COLOR forDuration:1];
-//            }
-//            else {
-//                [self dismissViewControllerAnimated:YES completion:^{
-//                    [Global showNotificationWithTitle:@"Case saved successfully!" titleColor:WHITE_COLOR backgroundColor:APP_GREEN_COLOR forDuration:1];
-//                }];
-//            }
+
         }
     }
     @catch (NSException *exception) {
