@@ -185,22 +185,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LawyerDiary/Views/CaseCell.m"
-            timestampString = "503344129.838238"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "-awakeFromNib"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "LawyerDiary/Controllers/SubordinateCases.m"
             timestampString = "503344153.886959"
             startingColumnNumber = "9223372036854775807"
@@ -329,8 +313,8 @@
                   symbolName = "-[CourtDetail saveCourt]"
                   moduleName = "LawyerDiary"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/vermamukesh/Documents/Client%20project/Vijay%20Asnani/Lawyer/Verma%20Mukesh/LawyerDiary/LawyerDiary/Controllers/CourtDetail.m"
-                  timestampString = "504283355.780558"
+                  urlString = "file:///Users/vermamukesh/Documents/Client%20project/Vijay%20Asnani/Lawyer/Verma%20Mukesh/GitHub/lawyerios/LawyerDiary/Controllers/CourtDetail.m"
+                  timestampString = "504340689.939914"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "300"
@@ -344,8 +328,8 @@
                   symbolName = "__24-[CourtDetail saveCourt]_block_invoke"
                   moduleName = "LawyerDiary"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/vermamukesh/Documents/Client%20project/Vijay%20Asnani/Lawyer/Verma%20Mukesh/LawyerDiary/LawyerDiary/Controllers/CourtDetail.m"
-                  timestampString = "504283355.783071"
+                  urlString = "file:///Users/vermamukesh/Documents/Client%20project/Vijay%20Asnani/Lawyer/Verma%20Mukesh/GitHub/lawyerios/LawyerDiary/Controllers/CourtDetail.m"
+                  timestampString = "504340689.942137"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "300"
@@ -377,8 +361,8 @@
                   symbolName = "-[CourtDetail saveCourt]"
                   moduleName = "LawyerDiary"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/vermamukesh/Documents/Client%20project/Vijay%20Asnani/Lawyer/Verma%20Mukesh/LawyerDiary/LawyerDiary/Controllers/CourtDetail.m"
-                  timestampString = "504283355.787572"
+                  urlString = "file:///Users/vermamukesh/Documents/Client%20project/Vijay%20Asnani/Lawyer/Verma%20Mukesh/GitHub/lawyerios/LawyerDiary/Controllers/CourtDetail.m"
+                  timestampString = "504340689.946999"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "300"
@@ -392,8 +376,8 @@
                   symbolName = "__24-[CourtDetail saveCourt]_block_invoke"
                   moduleName = "LawyerDiary"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/vermamukesh/Documents/Client%20project/Vijay%20Asnani/Lawyer/Verma%20Mukesh/LawyerDiary/LawyerDiary/Controllers/CourtDetail.m"
-                  timestampString = "504283355.789877"
+                  urlString = "file:///Users/vermamukesh/Documents/Client%20project/Vijay%20Asnani/Lawyer/Verma%20Mukesh/GitHub/lawyerios/LawyerDiary/Controllers/CourtDetail.m"
+                  timestampString = "504340689.949461"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "300"
@@ -416,6 +400,118 @@
             startingLineNumber = "302"
             endingLineNumber = "302"
             landmarkName = "-saveCourt"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LawyerDiary/Controllers/UpdateCase.m"
+            timestampString = "504340689.765068"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "678"
+            endingLineNumber = "678"
+            landmarkName = "-saveCase"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LawyerDiary/Controllers/UpdateCase.m"
+            timestampString = "504340689.765068"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "680"
+            endingLineNumber = "680"
+            landmarkName = "-saveCase"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__22-[UpdateCase saveCase]_block_invoke"
+                  moduleName = "LawyerDiary"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vermamukesh/Documents/Client%20project/Vijay%20Asnani/Lawyer/Verma%20Mukesh/GitHub/lawyerios/LawyerDiary/Controllers/UpdateCase.m"
+                  timestampString = "504340689.966343"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "680"
+                  endingLineNumber = "680"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__22-[UpdateCase saveCase]_block_invoke_2"
+                  moduleName = "LawyerDiary"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vermamukesh/Documents/Client%20project/Vijay%20Asnani/Lawyer/Verma%20Mukesh/GitHub/lawyerios/LawyerDiary/Controllers/UpdateCase.m"
+                  timestampString = "504340689.969256"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "680"
+                  endingLineNumber = "680"
+                  offsetFromSymbolStart = "33">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LawyerDiary/Controllers/UpdateCase.m"
+            timestampString = "504340689.765068"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "682"
+            endingLineNumber = "682"
+            landmarkName = "-saveCase"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LawyerDiary/Controllers/UpdateCase.m"
+            timestampString = "504340672.601527"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "655"
+            endingLineNumber = "655"
+            landmarkName = "-saveCase"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LawyerDiary/Controllers/UpdateCase.m"
+            timestampString = "504340316.701834"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "665"
+            endingLineNumber = "665"
+            landmarkName = "-saveCase"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
